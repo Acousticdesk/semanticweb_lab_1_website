@@ -1,0 +1,92 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title
+  meta(name='description', content='')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(property='og:title', content='')
+  meta(property='og:type', content='')
+  meta(property='og:url', content='')
+  meta(property='og:image', content='')
+  link(rel='apple-touch-icon', href='icon.png')
+  // Bootstrap
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi', crossorigin='anonymous')
+  link(rel='stylesheet', href='css/normalize.css')
+  link(rel='stylesheet', href='css/main.css')
+  meta(name='theme-color', content='#fafafa')
+// Microdata
+// RDFa
+body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
+  nav.navbar.navbar-expand-lg.bg-light
+    .container
+      a.navbar-brand.router-link(href='#router-main') Graph Info
+      button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.nav-link.router-link.active(aria-current='page', href='#router-main') Home
+          li.nav-item
+            a.nav-link.router-link(href='#router-about') About
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false', itemprop='significantLink', property='significantLink')
+              | Additional Resources
+            ul.dropdown-menu
+              each additionalResource in [{ href: 'https://dbpedia.org/page/Data_structure', text: 'What is Data Structure?' }, { href: 'https://dbpedia.org/page/Graph_theory', text: 'Graph Theory' }, { href: 'https://dbpedia.org/page/Dijkstra', text: 'Dijkstra&apos;s Algorithm' }, { href: 'https://dbpedia.org/page/Breadth-first_search', text: 'Breadth-first Search Algorithm' }]
+                li
+                  a.dropdown-item(target='_blank', href=additionalResource.href)= additionalResource.text
+        // Search bar
+        // Microdata
+        // RDFa
+        form#search_form.d-flex(role='search', itemprop='potentialAction', itemscope='', itemtype='https://schema.org/SearchAction', property='potentialAction', typeof='SearchAction')
+          input#search_field.form-control.me-2(name='search', type='search', placeholder='Search', aria-label='Search', itemprop='query', property='query')
+          button.btn.btn-outline-success(type='submit') Search
+  #router-outlet.container.py-3
+    #router-main
+      h1 What is a Graph?
+      .text-container
+        | A
+        b Graph
+        |  is a non-linear data structure consisting of vertices and edges. The vertices are sometimes also referred to as nodes and the edges are lines or arcs that connect any two nodes in the graph. More formally a Graph is composed of a set of vertices( V ) and a set of edges( E ). The graph is denoted by G(E, V).
+      h1 Why Software Engineers need Graphs?
+      .text-container
+        | Graphs help us model the relationship between the objects in the system. The problems that require the short path finding mechanisms can be modeled with graphs so that later BST (breadth-first search) algorithm can be used to find the shortest route.
+      h1 How a Graph looks like?
+      .text-container
+        img(src='https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png', alt='undirected graph', itemprop='image', property='image')
+      h1 Latest questions from our users
+      // Reviews carousel
+      // Microdata
+      // RDFa
+      #carouselExampleDark.carousel.carousel-dark.slide.mt-5(data-bs-ride='carousel')
+        .carousel-inner
+          each question in [{ 'name': 'Vinny Mcarthur', 'content': 'How to represent graph as an adjacency matrix?', 'activeClass': true }, { 'name': 'Dhruv Yates', 'content': 'How to model a graph in C++?' }, { 'name': 'Keziah Forrest', 'content': 'What is a weighted graph?' }]
+            .carousel-item(class={ active: typeof question.activeClass !== 'undefined' }, data-bs-interval='3000', itemscope='', itemtype='https://schema.org/Question', typeof='Question')
+              .text-center
+                h5(itemprop='author', property='author')= question.name
+                p(itemprop='about', property='about')= question.content
+        button.carousel-control-prev(type='button', data-bs-target='#carouselExampleDark', data-bs-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.visually-hidden Previous
+        button.carousel-control-next(type='button', data-bs-target='#carouselExampleDark', data-bs-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.visually-hidden Next
+    // About page route
+    // Microdata
+    // RDFf
+    #router-about(hidden='', itemprop='mainContentOfPage', itemscope='', itemtype='https://schema.org/AboutPage', typeof='AboutPage')
+      h1 About
+      .text-container
+        span(itemprop='specialty', property='specialty') Graph
+        |  Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
+        p.mt-2(itemprop='author', property='author')
+          | by
+          a(href='mailto:a.kicha@knu.ua') a.kicha@knu.ua
+  footer
+    .container
+      a.router-link.footer-link(href='#router-main') Graph Info
+  script(src='js/vendor/modernizr-3.11.2.min.js')
+  // Bootstrap
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js', integrity='sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3', crossorigin='anonymous')
+  script(src='js/plugins.js')
+  script(src='js/main.js')

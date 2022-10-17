@@ -5,17 +5,22 @@
   "license": "ISC",
   "author": "",
   "scripts": {
+    "build-html": "pug index.pug -P",
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.7.1"
   },
   "main": "index.js",
   "directories": {
     "doc": "doc"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "pug": "^3.0.2"
+  }
 }
