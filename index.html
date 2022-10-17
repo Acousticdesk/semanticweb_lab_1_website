@@ -38,7 +38,15 @@
             <a class="nav-link router-link" href="#router-about">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a itemprop="significantLink" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              itemprop="significantLink"
+              property="significantLink"
+            >
               Additional Resources
             </a>
             <ul class="dropdown-menu">
@@ -51,6 +59,7 @@
         </ul>
         <!-- Search bar -->
         <!-- Microdata -->
+        <!-- RDFa -->
         <form
           id="search_form"
           class="d-flex"
@@ -58,6 +67,8 @@
           itemprop="potentialAction"
           itemscope
           itemtype="https://schema.org/SearchAction"
+          property="potentialAction"
+          typeof="SearchAction"
         >
           <input
             id="search_field"
@@ -67,6 +78,7 @@
             placeholder="Search"
             aria-label="Search"
             itemprop="query"
+            property="query"
           >
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
@@ -88,30 +100,53 @@
 
         <h1>How a Graph looks like?</h1>
         <div class="text-container">
-          <img itemprop="image" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png" alt="undirected graph">
+          <img
+            src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png"
+            alt="undirected graph"
+            itemprop="image"
+            property="image"
+          >
         </div>
 
         <h1>Latest questions from our users</h1>
         <!-- Reviews carousel -->
         <!-- Microdata -->
+        <!-- RDFa -->
         <div id="carouselExampleDark" class="carousel carousel-dark slide mt-5" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div itemscope itemtype="https://schema.org/Question" class="carousel-item active" data-bs-interval="10000">
+            <div
+              class="carousel-item active"
+              data-bs-interval="3000"
+              itemscope
+              itemtype="https://schema.org/Question"
+              typeof="Question"
+            >
               <div class="text-center">
-                <h5 itemprop="author">Vinny Mcarthur</h5>
-                <p itemprop="about">How to represent graph as an adjacency matrix?</p>
+                <h5 itemprop="author" property="author">Vinny Mcarthur</h5>
+                <p itemprop="about" property="about">How to represent graph as an adjacency matrix?</p>
               </div>
             </div>
-            <div itemscope itemtype="https://schema.org/Question" class="carousel-item" data-bs-interval="2000">
+            <div
+              class="carousel-item"
+              data-bs-interval="3000"
+              itemscope
+              itemtype="https://schema.org/Question"
+              typeof="Question"
+            >
               <div class="text-center">
-                <h5 itemprop="author">Dhruv Yates</h5>
-                <p itemprop="about">How to model a graph in C++?</p>
+                <h5 itemprop="author" property="author">Dhruv Yates</h5>
+                <p itemprop="about" property="about">How to model a graph in C++?</p>
               </div>
             </div>
-            <div itemscope itemtype="https://schema.org/Question" class="carousel-item">
+            <div
+              class="carousel-item"
+              itemscope
+              itemtype="https://schema.org/Question"
+              typeof="Question"
+            >
               <div class="text-center">
-                <h5 itemprop="author">Keziah Forrest</h5>
-                <p itemprop="about">What is a weighted graph?</p>
+                <h5 itemprop="author" property="author">Keziah Forrest</h5>
+                <p itemprop="about" property="about">What is a weighted graph?</p>
               </div>
             </div>
           </div>
@@ -127,17 +162,19 @@
       </div>
       <!-- About page route -->
       <!-- Microdata -->
+      <!-- RDFf -->
       <div
         hidden
         id="router-about"
         itemprop="mainContentOfPage"
         itemscope
         itemtype="https://schema.org/AboutPage"
+        typeof="AboutPage"
       >
         <h1>About</h1>
         <div class="text-container">
-          <span itemprop="specialty">Graph</span> Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
-          <p class="mt-2" itemprop="author">
+          <span itemprop="specialty" property="specialty">Graph</span> Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
+          <p class="mt-2" itemprop="author" property="author">
             by <a href="mailto:a.kicha@knu.ua">a.kicha@knu.ua</a>
           </p>
         </div>
