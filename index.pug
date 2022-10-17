@@ -53,7 +53,7 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
         | Graphs help us model the relationship between the objects in the system. The problems that require the short path finding mechanisms can be modeled with graphs so that later BST (breadth-first search) algorithm can be used to find the shortest route.
       h1 How a Graph looks like?
       .text-container
-        img(src='https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png', alt='undirected graph', itemprop='image', property='image')
+        img(src='https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png', alt='undirected graph', property='image')
       h1 Latest questions from our users
       // Reviews carousel
       // Microdata
@@ -74,14 +74,15 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
     // About page route
     // Microdata
     // RDFf
-    #router-about(hidden='', itemprop='mainContentOfPage', itemscope='', itemtype='https://schema.org/AboutPage', typeof='AboutPage')
+    #router-about(hidden='', itemscope='', itemtype='https://schema.org/AboutPage', typeof='AboutPage')
       h1 About
       .text-container
         span(itemprop='specialty', property='specialty') Graph
         |  Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
-        p.mt-2(itemprop='author', property='author')
+        p.mt-2
           | by
-          a(href='mailto:a.kicha@knu.ua') a.kicha@knu.ua
+          a(href='mailto:a.kicha@knu.ua')
+            span(itemprop='author', property='author') a.kicha@knu.ua
   footer
     .container
       a.router-link.footer-link(href='#router-main') Graph Info
@@ -90,3 +91,6 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
   script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js', integrity='sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3', crossorigin='anonymous')
   script(src='js/plugins.js')
   script(src='js/main.js')
+  script(type='application/ld+json')
+  include json-ld.html
+
