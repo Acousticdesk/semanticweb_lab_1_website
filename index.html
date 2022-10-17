@@ -12,23 +12,20 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
 
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
-
-<body>
-
-  <!-- Add your site or application content here -->
+<!-- Microdata -->
+<body itemscope itemtype="https://schema.org/WebPage">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">Graph Info</a>
+      <a  class="navbar-brand router-link" href="#router-main">Graph Info</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,7 +38,7 @@
             <a class="nav-link router-link" href="#router-about">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a itemprop="significantLink" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Additional Resources
             </a>
             <ul class="dropdown-menu">
@@ -52,8 +49,25 @@
             </ul>
           </li>
         </ul>
-        <form id="search_form" class="d-flex" role="search">
-          <input id="search_field" name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <!-- Search bar -->
+        <!-- Microdata -->
+        <form
+          id="search_form"
+          class="d-flex"
+          role="search"
+          itemprop="potentialAction"
+          itemscope
+          itemtype="https://schema.org/SearchAction"
+        >
+          <input
+            id="search_field"
+            name="search"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            itemprop="query"
+          >
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
@@ -74,28 +88,72 @@
 
         <h1>How a Graph looks like?</h1>
         <div class="text-container">
-          <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png" alt="undirected graph">
+          <img itemprop="image" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png" alt="undirected graph">
+        </div>
+
+        <h1>Latest questions from our users</h1>
+        <!-- Reviews carousel -->
+        <!-- Microdata -->
+        <div id="carouselExampleDark" class="carousel carousel-dark slide mt-5" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div itemscope itemtype="https://schema.org/Question" class="carousel-item active" data-bs-interval="10000">
+              <div class="text-center">
+                <h5 itemprop="author">Vinny Mcarthur</h5>
+                <p itemprop="about">How to represent graph as an adjacency matrix?</p>
+              </div>
+            </div>
+            <div itemscope itemtype="https://schema.org/Question" class="carousel-item" data-bs-interval="2000">
+              <div class="text-center">
+                <h5 itemprop="author">Dhruv Yates</h5>
+                <p itemprop="about">How to model a graph in C++?</p>
+              </div>
+            </div>
+            <div itemscope itemtype="https://schema.org/Question" class="carousel-item">
+              <div class="text-center">
+                <h5 itemprop="author">Keziah Forrest</h5>
+                <p itemprop="about">What is a weighted graph?</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
-      <div hidden id="router-about">
+      <!-- About page route -->
+      <!-- Microdata -->
+      <div
+        hidden
+        id="router-about"
+        itemprop="mainContentOfPage"
+        itemscope
+        itemtype="https://schema.org/AboutPage"
+      >
         <h1>About</h1>
         <div class="text-container">
-          Graph Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
+          <span itemprop="specialty">Graph</span> Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
+          <p class="mt-2" itemprop="author">
+            by <a href="mailto:a.kicha@knu.ua">a.kicha@knu.ua</a>
+          </p>
         </div>
       </div>
   </div>
 
+  <footer>
+    <div class="container">
+      <a class="router-link footer-link" href="#router-main">Graph Info</a>
+    </div>
+  </footer>
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
-
 </html>
