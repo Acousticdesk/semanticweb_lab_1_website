@@ -32,7 +32,7 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
             a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false', itemprop='significantLink', property='significantLink')
               | Additional Resources
             ul.dropdown-menu
-              each additionalResource in [{ href: 'https://dbpedia.org/page/Data_structure', text: 'What is Data Structure?' }, { href: 'https://dbpedia.org/page/Graph_theory', text: 'Graph Theory' }, { href: 'https://dbpedia.org/page/Dijkstra', text: 'Dijkstra&apos;s Algorithm' }, { href: 'https://dbpedia.org/page/Breadth-first_search', text: 'Breadth-first Search Algorithm' }]
+              each additionalResource in [{ href: 'https://dbpedia.org/page/Data_structure', text: 'What is Data Structure?' }, { href: 'https://dbpedia.org/page/Graph_theory', text: 'Graph Theory' }, { href: 'https://dbpedia.org/page/Dijkstra', text: 'Dijkstra\'s Algorithm' }, { href: 'https://dbpedia.org/page/Breadth-first_search', text: 'Breadth-first Search Algorithm' }]
                 li
                   a.dropdown-item(target='_blank', href=additionalResource.href)= additionalResource.text
         // Search bar
@@ -51,6 +51,13 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
       h1 Why Software Engineers need Graphs?
       .text-container
         | Graphs help us model the relationship between the objects in the system. The problems that require the short path finding mechanisms can be modeled with graphs so that later BST (breadth-first search) algorithm can be used to find the shortest route.
+      h1 How to represent a Graph?
+      .text-container
+        ul
+          each howToStep in [{name: 'Create Graph Class', text: 'Declare a class in called Graph in your favorite language'},{name: 'Create Vertex Class',text: 'Declare yet another class that will be used in your Graph class'},{name: 'Add the Vertexes to your Graph',text: 'Find out what data should be represented as vertexes in your model'},{name: 'Build the connections',text: 'Find out about the relationships between the vertexes and connect them with edges'}]
+            li
+              h5= howToStep.name
+              p= howToStep.text
       h1 How a Graph looks like?
       .text-container
         img(src='https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png', alt='undirected graph', property='image')
@@ -81,7 +88,7 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
         span#about_element(itemprop='specialty', property='specialty') Graph
         |  Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
         p.mt-2
-          | by
+          | by&nbsp;
           a(href='mailto:a.kicha@knu.ua')
             span(itemprop='author', property='author') a.kicha@knu.ua
   footer
