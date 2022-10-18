@@ -54,12 +54,12 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
       .text-container
         | Graphs help us model the relationship between the objects in the system. The problems that require the short path finding mechanisms can be modeled with graphs so that later BST (breadth-first search) algorithm can be used to find the shortest route.
       h1 How to represent a Graph?
-      .text-container
+      .text-container(itemscope='', itemtype='http://schema.org/HowTo' typeof='HowTo')
         ul
           each howToStep in [{name: 'Create Graph Class', text: 'Declare a class in called Graph in your favorite language'},{name: 'Create Vertex Class',text: 'Declare yet another class that will be used in your Graph class'},{name: 'Add the Vertexes to your Graph',text: 'Find out what data should be represented as vertexes in your model'},{name: 'Build the connections',text: 'Find out about the relationships between the vertexes and connect them with edges'}]
-            li
-              h5= howToStep.name
-              p= howToStep.text
+            li(itemprop='step', property='step', itemscope='', itemtype='http://schema.org/HowToStep', typeof='HowToStep')
+              h5(itemprop='name' property='name')= howToStep.name
+              p(itemprop='text' property='text')= howToStep.text
       h1 How a Graph looks like?
       .text-container
         img(src='https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png', alt='undirected graph', property='image')
