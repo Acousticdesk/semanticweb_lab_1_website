@@ -1,45 +1,98 @@
 <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "http://example.org/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://example.org/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://example.org/",
+      "name": "Graph Info",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://example.org/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "significantLink": "https://dbpedia.org/page/Graph_theory"
     },
-  "significantLink": "https://dbpedia.org/page/Graph_theory"
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "specialty": "Graph",
-    "author": "a.kicha@knu.ua"
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Question",
-    "author": "Vinny Mcarthur",
-    "about": "How to represent graph as an adjacency matrix?"
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Question",
-    "author": "Dhruv Yates",
-    "about": "How to model a graph in C++?"
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Question",
-    "author": "Keziah Forrest",
-    "about": "What is a weighted graph?"
-  }
+    {
+      "@context": "http://schema.org/",
+      "@type": "AboutPage",
+      "description": "Graph Info is a resource for learning graphs",
+      "name": "Graph Info About Page",
+      "url": "https://example.org/about",
+      "lastReviewed": "2022-10-18",
+      "mainContentOfPage": {
+        "@type": "WebPageElement",
+        "cssSelector": "#about_element"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "familyName": "Kicha",
+        "email": "a.kicha@knu.ua",
+        "gender": "M",
+        "sameAs": "http://facebook.com/akicha"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "name": "Graph Info FAQ",
+      "mainEntity": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Question",
+          "author": "Vinny Mcarthur",
+          "name": "How to represent graph as an adjacency matrix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can represent it as a two dimensional array"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Question",
+          "author": "Dhruv Yates",
+          "name": "How to model a graph in C++?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can create a Graph and Vertex classes, instantiate them and use them accordingly"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Question",
+          "author": "Keziah Forrest",
+          "name": "What is a weighted graph?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A weighted graph is the one that has weight value on its edges"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowToSection",
+      "name": "How to represent a Graph",
+      "itemListElement": [
+        {
+          "@type": "HowToStep",
+          "name": "Create Graph Class",
+          "text": "Declare a class in called Graph in your favorite language"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Create Vertex Class",
+          "text": "Declare yet another class that will be used in your Graph class"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Add the Vertexes to your Graph",
+          "text": "Find out what data should be represented as vertexes in your model"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Build the connections",
+          "text": "Find out about the relationships between the vertexes and connect them with edges"
+        }
+      ]
+    }
+  ]
 </script>

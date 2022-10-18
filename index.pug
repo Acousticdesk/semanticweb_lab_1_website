@@ -60,11 +60,12 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
       // RDFa
       #carouselExampleDark.carousel.carousel-dark.slide.mt-5(data-bs-ride='carousel')
         .carousel-inner
-          each question in [{ 'name': 'Vinny Mcarthur', 'content': 'How to represent graph as an adjacency matrix?', 'activeClass': true }, { 'name': 'Dhruv Yates', 'content': 'How to model a graph in C++?' }, { 'name': 'Keziah Forrest', 'content': 'What is a weighted graph?' }]
+          each question in [{ 'name': 'Vinny Mcarthur', 'content': 'How to represent graph as an adjacency matrix?', 'activeClass': true, response: 'You can represent it as a two dimensional array' }, { 'name': 'Dhruv Yates', 'content': 'How to model a graph in C++?', response: 'You can create a Graph and Vertex classes, instantiate them and use them accordingly' }, { 'name': 'Keziah Forrest', 'content': 'What is a weighted graph?', response: 'A weighted graph is the one that has weight value on its edges' }]
             .carousel-item(class={ active: typeof question.activeClass !== 'undefined' }, data-bs-interval='3000', itemscope='', itemtype='https://schema.org/Question', typeof='Question')
               .text-center
                 h5(itemprop='author', property='author')= question.name
-                p(itemprop='about', property='about')= question.content
+                p(itemprop='about', property='about') Q: #{question.content}
+                p A: #{question.response}
         button.carousel-control-prev(type='button', data-bs-target='#carouselExampleDark', data-bs-slide='prev')
           span.carousel-control-prev-icon(aria-hidden='true')
           span.visually-hidden Previous
@@ -77,7 +78,7 @@ body(itemscope itemtype='https://schema.org/WebPage' typeof='WebPage')
     #router-about(hidden='', itemscope='', itemtype='https://schema.org/AboutPage', typeof='AboutPage')
       h1 About
       .text-container
-        span(itemprop='specialty', property='specialty') Graph
+        span#about_element(itemprop='specialty', property='specialty') Graph
         |  Info is a resource that helps you understand the Graph data structure so that you can use it in your applications to better model the processes and relationships between objects
         p.mt-2
           | by
